@@ -7,9 +7,9 @@ class CustomTextformfield extends StatelessWidget {
     super.key,
     required this.controller,
     required this.hintText,
-     this.suffixicon,
-     this.prefixicon,
-     this.validator
+    this.suffixicon,
+    this.prefixicon,
+    this.validator,
   });
 
   final TextEditingController controller;
@@ -17,7 +17,6 @@ class CustomTextformfield extends StatelessWidget {
   final Widget? suffixicon;
   final Widget? prefixicon;
   final String? Function(String?)? validator;
-
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,8 @@ class CustomTextformfield extends StatelessWidget {
         hintStyle: AppFonts.hinttxt,
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(32)),
+          borderRadius: BorderRadius.circular(32),
+        ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.circular(32),
@@ -41,18 +41,18 @@ class CustomTextformfield extends StatelessWidget {
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.circular(32),
         ),
-        suffixIcon:Padding(
+        suffixIcon: Padding(
           padding: const EdgeInsets.all(12.0),
           child: suffixicon,
         ),
-        prefixIcon: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: prefixicon,
-        ) ,
+        contentPadding: prefixicon != null
+            ? EdgeInsets.zero
+            : EdgeInsets.only(left: 20),
+        prefixIcon: prefixicon != null
+            ? Padding(padding: const EdgeInsets.all(15.0), child: prefixicon)
+            : null,
         filled: true,
         fillColor: AppColors.foreground,
-        
-        
       ),
       validator: validator,
     );

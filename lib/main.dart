@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
             elevation: 0,
             centerTitle: true,
             toolbarHeight: 80,
+            scrolledUnderElevation: 0.0,
             titleTextStyle: AppFonts.subheading,
           ),
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quadleo_machine_test/views/auth/login.dart';
 import 'package:quadleo_machine_test/views/auth/splash_screen.dart';
-import 'package:quadleo_machine_test/views/home_page.dart';
+import 'package:quadleo_machine_test/views/home/home_page.dart';
 
 class AppRouter {
   static const String splash = '/';
@@ -14,7 +14,7 @@ class AppRouter {
       case login:
         return MaterialPageRoute(builder: (_) => Login());
       case home:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (_) =>  HomePage());
        default:
         return MaterialPageRoute(
           builder:

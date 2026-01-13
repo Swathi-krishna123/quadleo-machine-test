@@ -46,4 +46,20 @@ class AppFonts {
     height: height,
     letterSpacing: letterSpacing,
   );
+  static const TextStyle bodySmall = TextStyle(
+  fontFamily: fontFamily,
+  fontSize: 12,
+  fontWeight: FontWeight.w400,
+  color: AppColors.secondary, 
+  height: 19 / 12,
+  letterSpacing: -1,
+);
+static const TextStyle amountText = TextStyle(
+  fontFamily: fontFamily,
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+  color: AppColors.secondary, 
+  height: 19 / 14,
+  letterSpacing: -1,
+);
 }

@@ -8,6 +8,7 @@ class AppColors {
   static const Color foreground = Color(0xFFF5F5F5);
   static const Color hint = Color(0xFF888888);
   static const Color border = Color(0xFFEBEBEB);
+  static const Color green = Color(0xFF1B5E20);
   
 
 }

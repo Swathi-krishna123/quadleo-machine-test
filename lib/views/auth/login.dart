@@ -6,6 +6,7 @@ import 'package:quadleo_machine_test/utils/constants/app_colors.dart';
 import 'package:quadleo_machine_test/utils/constants/app_fonts.dart';
 import 'package:quadleo_machine_test/utils/constants/validators.dart';
 import 'package:quadleo_machine_test/utils/router/app_router.dart';
+import 'package:quadleo_machine_test/utils/shared_pref_helper/shared_pref_helper.dart';
 import 'package:quadleo_machine_test/views/auth/bloc/auth_bloc.dart';
 import 'package:quadleo_machine_test/views/auth/bloc/auth_event.dart';
 import 'package:quadleo_machine_test/views/auth/bloc/auth_state.dart';
@@ -35,10 +36,18 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(automaticallyImplyLeading: false, title: Text("Login")),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        
+        title: const Padding(
+          padding: EdgeInsets.only(top: 30.0),
+          child: Text("Login"),
+        ),
+      ),
       body: BlocConsumer<AuthBloc, AuthState>(
-        listener: (context, state) {
+        listener: (context, state) async{
           if (state is AuthAuthenticated) {
+            await SharedPrefHelper.setLoggedIn(true);
             Navigator.pushReplacementNamed(context, AppRouter.home);
           }
       
